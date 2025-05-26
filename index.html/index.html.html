@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multijuegos Competencia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="menu">
+    <h1>Elegí un juego</h1>
+    <button onclick="seleccionarJuego('snake')">Snake 🐍</button>
+    <button onclick="seleccionarJuego('negocio')">Simulador de Negocio 💼</button>
+    <button onclick="seleccionarJuego('tiro')">Tiro al Blanco 🎯</button>
+    <button onclick="mostrarRanking()">Ranking</button>
+    <button onclick="mostrarTienda()">Tienda de Skins</button>
+  </div>
+
+  <div id="nombreJugadorDiv" class="oculto">
+    <h2>Escribí tu nombre</h2>
+    <input type="text" id="nombreJugadorInput" placeholder="Tu nombre" />
+    <button onclick="iniciarJuego()">Iniciar Juego</button>
+  </div>
+
+  <!-- Snake -->
+  <div id="snakeGame" class="oculto">
+    <h2>Snake</h2>
+    <p>Puntaje: <span id="snakeScore">0</span></p>
+    <canvas id="snakeCanvas" width="600" height="400"></canvas>
+  </div>
+
+  <!-- Negocio -->
+  <div id="negocioGame" class="oculto">
+    <h2>Simulador de Negocio</h2>
+    <p>Dinero: $<span id="negocioDinero">0</span></p>
+    <button onclick="incrementarDinero()">Ganar $10</button>
+    <button onclick="comprarNegocio()">Comprar negocio - $50</button>
+    <p>Negocios: <span id="negociosCantidad">0</span></p>
+  </div>
+
+  <!-- Tiro al Blanco -->
+  <div id="tiroGame" class="oculto">
+    <h2>Tiro al Blanco</h2>
+    <p>Puntaje: <span id="tiroScore">0</span></p>
+    <canvas id="tiroCanvas" width="600" height="400"></canvas>
+  </div>
+
+  <!-- Ranking -->
+  <div id="ranking" class="oculto">
+    <h2>Ranking Local</h2>
+    <table>
+      <thead>
+        <tr><th>Pos</th><th>Nombre</th><th>Juego</th><th>Puntaje</th></tr>
+      </thead>
+      <tbody id="tablaRanking"></tbody>
+    </table>
+    <button onclick="volverMenu()">Volver al menú</button>
+  </div>
+
+  <!-- Tienda -->
+  <div id="tienda" class="oculto">
+    <h2>Tienda de Skins</h2>
+    <p>Monedas: <span id="monedasTotales">0</span></p>
+    <div id="skinsContainer"></div>
+    <button onclick="volverMenu()">Volver al menú</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
